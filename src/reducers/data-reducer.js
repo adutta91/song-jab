@@ -1,12 +1,13 @@
 const initialState = () => ({
+  artists: [],
   concerts: [],
-  fetched: false
+  venues: []
 });
 
 export default (state = initialState(), action) => {
   switch (action.type) {
-    case "CONCERTS_RECEIVED":
-      return { ...state, concerts: action.concerts, fetched: true };
+    case "DATA_RECEIVED":
+      return { ...state, [action.slug]: action.data };
     default:
       return state;
   }

@@ -1,12 +1,11 @@
 const initialState = () => ({
-  artists: [],
-  fetched: false
+  loading: false
 });
 
 export default (state = initialState(), action) => {
   switch (action.type) {
-    case "ARTISTS_RECEIVED":
-      return { ...state, artists: action.artists, fetched: true };
+    case "SET_LOADING":
+      return { ...state, loading: action.val };
     default:
       return state;
   }

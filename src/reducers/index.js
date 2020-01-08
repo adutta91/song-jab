@@ -1,12 +1,10 @@
 import { combineReducers } from "redux";
 
 //reducers
-import concertReducer from "./concert-reducer";
-import artistReducer from "./artist-reducer";
-import venueReducer from "./venue-reducer";
+import dataReducer from "./data-reducer";
+import viewReducer from "./view-reducer";
 
 export default combineReducers({
-  concertReducer,
-  artistReducer,
-  venueReducer
+  dataReducer,
+  viewReducer
 });
