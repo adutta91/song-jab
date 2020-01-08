@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import styled from "styled-components";
 import Spinner from "../Spinner";
@@ -34,7 +35,9 @@ function List({ loading, selected, data, dataReceived }) {
   return (
     <StyledList>
       {data[selected].map(datum => (
-        <CardComponent {...datum} key={datum._id} />
+        <Link key={datum.id} to={`/${selected}/${resources[selected].slug}`}>
+          <CardComponent {...datum} />
+        </Link>
       ))}
     </StyledList>
   );
