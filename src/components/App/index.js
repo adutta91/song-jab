@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { map, forEach } from "lodash";
+import { map } from "lodash";
 import { get } from "axios";
 import resources from "../../app/resources";
 import { dataReceived, setLoading } from "../../actions";

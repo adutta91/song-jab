@@ -4,16 +4,21 @@ import "./index.css";
 import App from "./components/App";
 import * as serviceWorker from "./serviceWorker";
 
+import ThemeProvider from "./theme-provider";
 import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import store from "./store";
 
 const app = (
-  <Provider store={store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </Provider>
+  <ThemeProvider>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/:view?" component={App} />
+        </Switch>
+      </BrowserRouter>
+    </Provider>
+  </ThemeProvider>
 );
 
 ReactDOM.render(app, document.getElementById("root"));

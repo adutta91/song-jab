@@ -6,7 +6,10 @@ import List from "../List";
 import Profile from "../Profile";
 import { Switch, Route } from "react-router-dom";
 
-const StyledPageContents = styled.section``;
+const StyledPageContents = styled.section`
+  padding: 40px;
+  background: (0, 0, 0, 0.05);
+`;
 
 function PageContents(props) {
   return (
