@@ -5,16 +5,13 @@ import App from "./components/App";
 import * as serviceWorker from "./serviceWorker";
 
 import { Provider } from "react-redux";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import store from "./store";
 
 const app = (
   <Provider store={store}>
     <BrowserRouter>
-      <Switch>
-        <Route exact path="/" component={App} />
-        <Route exact path="(/:view)" component={App} />
-      </Switch>
+      <App />
     </BrowserRouter>
   </Provider>
 );
