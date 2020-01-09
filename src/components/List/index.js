@@ -38,7 +38,7 @@ function List({ loading, selected, data, dataReceived }) {
   }
 
   const CardComponent = resources[selected].cardComponent;
-
+  console.log("data[selected] *****---->>>", data[selected]);
   return (
     <StyledList>
       <Pagination options={data[selected]} controlsPos="bottom" pageSize={20}>

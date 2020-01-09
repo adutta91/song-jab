@@ -37,8 +37,6 @@ const StyledCard = styled(Card)`
 `;
 
 function ArtistCard(props) {
-  // console.log("props *****---->>>", props);
-  // console.log("props.logo *****---->>>", props.logo);
   return (
     <StyledCard logo={props.logo}>
       <h1>{props.name}</h1>
