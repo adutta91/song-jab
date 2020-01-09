@@ -7,14 +7,16 @@ import Spinner from "../Spinner";
 import resources from "../../app/resources";
 import Pagination from "../Pagination";
 
-const StyledList = styled.ul`
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
+const StyledList = styled.section`
+  > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
 `;
 
 function List({ loading, selected, data, dataReceived }) {
@@ -40,16 +42,18 @@ function List({ loading, selected, data, dataReceived }) {
   return (
     <StyledList>
       <Pagination options={data[selected]} controlsPos="bottom" pageSize={20}>
-        {({ displayItems }) =>
-          displayItems.map(datum => (
-            <Link
-              key={datum.id}
-              to={`/${selected}/${resources[selected].slug}`}
-            >
-              <CardComponent {...datum} />
-            </Link>
-          ))
-        }
+        {({ displayItems }) => (
+          <ul>
+            {displayItems.map(datum => (
+              <Link
+                key={datum.id}
+                to={`/${selected}/${datum.id || datum.slug}`}
+              >
+                <CardComponent {...datum} />
+              </Link>
+            ))}
+          </ul>
+        )}
       </Pagination>
     </StyledList>
   );

@@ -1,8 +1,40 @@
 import React from "react";
 import PropTypes from "prop-types";
-import classnames from "classnames";
+
+import styled from "styled-components";
 
 import Button from "../Button";
+import Select from "../Select";
+import Option from "../Option";
+
+const StyledControls = styled.section`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+
+  > .page-display {
+    display: flex;
+    align-items: center;
+    
+    > section {
+      margin-right: 10px;
+    }
+  }
+
+  > button {
+    margin: 0 10px;
+    color: blue;
+    background: transparent;
+    cursor: pointer
+    outline: none;
+    
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+  }
+`;
 
 const Controls = ({ classNames, currPage, totalPages, onChange }) => {
   function pageChange(page, delta) {
@@ -22,9 +54,9 @@ const Controls = ({ classNames, currPage, totalPages, onChange }) => {
 
     for (let i = 0; i < totalPages; i++) {
       options.push(
-        <option value={i} key={i}>
+        <Option value={i} key={i}>
           {i + 1}
-        </option>
+        </Option>
       );
     }
 
@@ -35,20 +67,20 @@ const Controls = ({ classNames, currPage, totalPages, onChange }) => {
   if (totalPages <= 1) return null;
 
   return (
-    <div className={classnames(classNames)}>
+    <StyledControls>
       <Button disabled={currPage === 0} onClick={e => pageChange(null, -1)}>
         <i className="fas fa-chevron-left"></i>
       </Button>
 
       <div className="page-display">
-        <select
+        <Select
           name="currPage"
           id="currPage"
           onChange={e => pageChange(e.currentTarget.value)}
           value={currPage}
         >
           {getOptions()}
-        </select>
+        </Select>
         <div>of {totalPages}</div>
       </div>
 
@@ -58,7 +90,7 @@ const Controls = ({ classNames, currPage, totalPages, onChange }) => {
       >
         <i className="fas fa-chevron-right"></i>
       </Button>
-    </div>
+    </StyledControls>
   );
 };
 

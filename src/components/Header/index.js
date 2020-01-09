@@ -59,13 +59,10 @@ Header.propTypes = {
 
 export default withRouter(
   connect(
-    (state, props) => {
-      console.log("props *****---->>>", props);
-      return {
-        tabs: props.tabs,
-        selected: props.match.params.view
-      };
-    },
+    (state, props) => ({
+      tabs: props.tabs,
+      selected: props.match.params.view
+    }),
     dispatch => ({})
   )(Header)
 );

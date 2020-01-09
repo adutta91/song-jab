@@ -8,6 +8,7 @@ import { Switch, Route } from "react-router-dom";
 
 const StyledPageContents = styled.section`
   padding: 40px;
+  padding-bottom: 60px;
   background: (0, 0, 0, 0.05);
 `;
 

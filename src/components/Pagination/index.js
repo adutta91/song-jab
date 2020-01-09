@@ -1,10 +1,10 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { chunk } from "lodash";
 
 import Controls from "./controls";
 
-class WithPagination extends Component {
+class Pagination extends Component {
   constructor(props) {
     super(props);
 
@@ -53,26 +53,26 @@ class WithPagination extends Component {
   };
 
   render = () => (
-    <Fragment>
+    <>
       {this.props.controlsPos === "top" ? this.controls() : null}
 
       {this.props.children({
         displayItems: this.state.displayItems
       })}
       {this.props.controlsPos === "bottom" ? this.controls() : null}
-    </Fragment>
+    </>
   );
 }
 
-WithPagination.propTypes = {
+Pagination.propTypes = {
   options: PropTypes.array.isRequired,
   pageSize: PropTypes.number,
   controlsPos: PropTypes.oneOf(["top", "bottom"])
 };
 
-WithPagination.defaultProps = {
+Pagination.defaultProps = {
   controlsPos: "bottom",
   pageSize: 20
 };
 
-export default WithPagination;
+export default Pagination;

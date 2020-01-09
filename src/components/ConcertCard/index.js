@@ -1,11 +1,19 @@
 import React from "react";
 import moment from "moment";
+import styled from "styled-components";
 import Card from "../Card";
 import Button from "../Button";
 
+const StyledCard = styled(Card)`
+  > h1 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+`;
+
 function ConcertCard(props) {
   return (
-    <Card>
+    <StyledCard>
       <h1>{props.name}</h1>
       <p>{moment(props.event_date_time).format("MMMM Do, YYYY h:mma")}</p>
       <p>
@@ -17,7 +25,7 @@ function ConcertCard(props) {
           "Tickets Unavailable"
         )}
       </p>
-    </Card>
+    </StyledCard>
   );
 }
 
