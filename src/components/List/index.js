@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 import Spinner from "../Spinner";
 import resources from "../../app/resources";
+import Pagination from "../Pagination";
 
 const StyledList = styled.ul`
   list-style: none;
@@ -38,11 +39,18 @@ function List({ loading, selected, data, dataReceived }) {
 
   return (
     <StyledList>
-      {data[selected].map(datum => (
-        <Link key={datum.id} to={`/${selected}/${resources[selected].slug}`}>
-          <CardComponent {...datum} />
-        </Link>
-      ))}
+      <Pagination options={data[selected]} controlsPos="bottom" pageSize={20}>
+        {({ displayItems }) =>
+          displayItems.map(datum => (
+            <Link
+              key={datum.id}
+              to={`/${selected}/${resources[selected].slug}`}
+            >
+              <CardComponent {...datum} />
+            </Link>
+          ))
+        }
+      </Pagination>
     </StyledList>
   );
 }
