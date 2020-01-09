@@ -38,7 +38,7 @@ function List({ loading, selected, data, dataReceived }) {
   }
 
   const CardComponent = resources[selected].cardComponent;
-  console.log("data[selected] *****---->>>", data[selected]);
+
   return (
     <StyledList>
       <Pagination options={data[selected]} controlsPos="bottom" pageSize={20}>
@@ -46,7 +46,7 @@ function List({ loading, selected, data, dataReceived }) {
           <ul key="items-list">
             {displayItems.map(datum => (
               <Link
-                key={datum.id}
+                key={datum.id || datum.slug}
                 to={`/${selected}/${datum.id || datum.slug}`}
               >
                 <CardComponent {...datum} />

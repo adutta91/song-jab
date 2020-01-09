@@ -12,7 +12,7 @@ const StyledProfile = styled.section`
 `;
 
 function Profile({ data, view, id }) {
-  const item = find(data[view], datum => datum.id === id);
+  const item = find(data[view], datum => datum.id === id || datum.slug === id);
 
   const ProfileComponent = resources[view].profileComponent;
 

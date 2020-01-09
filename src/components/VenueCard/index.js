@@ -35,7 +35,7 @@ function VenueCard(props) {
   return (
     <StyledCard image={props.image}>
       <h1>{props.name}</h1>
-      <p>{props.city_state}</p>
+      <p>{props.formatted_address || props.city_state}</p>
     </StyledCard>
   );
 }

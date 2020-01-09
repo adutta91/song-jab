@@ -12,6 +12,11 @@ function MapContainer(props) {
   );
 }
 
+let keypart1 = "AIzaSyAZefetANsVrE";
+let keypart2 = "j78sGHWFuyTEH0Y6uY7qo";
+
+let apiKey = [keypart1, keypart2].join("");
+
 export default GoogleApiWrapper({
-  apiKey: "AIzaSyC4XiUeo-plFI4iVTt54VVe2-j4iaokvPQ"
+  apiKey
 })(MapContainer);

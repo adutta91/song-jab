@@ -21,8 +21,7 @@ const StyledPage = styled.section`
     margin: 0;
     padding: 0;
 
-    &.links,
-    &.genres {
+    &.links {
       display: flex;
 
       > li {
@@ -31,6 +30,25 @@ const StyledPage = styled.section`
         &:first-child {
           margin-left: 0;
         }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    &.genres {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      margin-bottom: 10px;
+
+      > li {
+        margin-right: 20px;
+        margin-bottom: 10px;
+        color: white;
+        padding: 5px;
+        background: rgba(0, 0, 0, 0.4);
 
         &:last-child {
           margin-right: 0;
