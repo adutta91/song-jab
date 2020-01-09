@@ -1,19 +1,9 @@
 export default {
   // background
-  backgroundColor: "#F9F9FB",
+  backgroundColor: "rgba(0,0,0,0.1)",
 
-  //borders
-  boxShadowColor: "rgba(0, 0, 0, 0.1)",
-  borderColor: "#E3E5E7",
-  borderRadius: "4px",
+  blue: "#6ea5ef",
 
   // font
-  fontColorPrimary: "#606060",
-  fontColorPrimaryLight: "#A5A8A8",
-  fontColorSecondary: "#EB5424",
-  linkColor: "#0D96C6",
-
-  // font styles
-  fontSizePrimary: "20px",
-  fontSizeSecondary: "16px"
+  fontColorPrimary: "#606060"
 };

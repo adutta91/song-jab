@@ -43,7 +43,7 @@ function List({ loading, selected, data, dataReceived }) {
     <StyledList>
       <Pagination options={data[selected]} controlsPos="bottom" pageSize={20}>
         {({ displayItems }) => (
-          <ul>
+          <ul key="items-list">
             {displayItems.map(datum => (
               <Link
                 key={datum.id}

@@ -10,6 +10,8 @@ const StyledPageContents = styled.section`
   padding: 40px;
   padding-bottom: 60px;
   background: (0, 0, 0, 0.05);
+  max-width: 1000px;
+  margin: 0 auto;
 `;
 
 function PageContents(props) {

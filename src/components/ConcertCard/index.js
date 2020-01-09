@@ -22,7 +22,7 @@ function ConcertCard(props) {
             Buy Tickets
           </Button>
         ) : (
-          "Tickets Unavailable"
+          <Button disabled>Tickets Unavailable</Button>
         )}
       </p>
     </StyledCard>

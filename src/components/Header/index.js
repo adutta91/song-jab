@@ -7,9 +7,10 @@ import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
 
 const StyledHeader = styled.header`
-  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 1px 1px ${({ theme }) => theme.variables.backgroundColor};
   display: flex;
   height: 60px;
+  background: white;
 
   > a {
     transition: all 0.2s ease-out;
@@ -27,7 +28,8 @@ const StyledHeader = styled.header`
     }
 
     &.active {
-      background: rgba(0, 0, 0, 0.1);
+      background: ${({ theme }) => theme.variables.blue};
+      color: white;
     }
   }
 `;

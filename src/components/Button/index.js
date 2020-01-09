@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const StyledButton = styled.button`
   text-decoration: none;
-  background: blue;
+  background: ${({ theme }) => theme.variables.blue};
   color: white;
   border-radius: 5px;
   padding: 10px;
@@ -12,6 +12,11 @@ const StyledButton = styled.button`
   font-size: 16px;
   box-shadow: none;
   border: none;
+  cursor: pointer;
+
+  &:disabled {
+    background: rgba(0, 0, 0, 0.2);
+  }
 `;
 
 function Button({ children, ...props }) {

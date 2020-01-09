@@ -6,8 +6,7 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 import resources from "../../app/resources";
 
-const StyledProfile = styled.ul`
-  profile-style: none;
+const StyledProfile = styled.section`
   margin: 0;
   padding: 0;
 `;

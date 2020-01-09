@@ -24,7 +24,7 @@ const StyledControls = styled.section`
 
   > button {
     margin: 0 10px;
-    color: blue;
+    color: ${({ theme }) => theme.variables.blue};
     background: transparent;
     cursor: pointer
     outline: none;
@@ -32,6 +32,7 @@ const StyledControls = styled.section`
     &:disabled {
       cursor: not-allowed;
       opacity: 0.5;
+      background: transparent;
     }
   }
 `;
@@ -67,7 +68,7 @@ const Controls = ({ classNames, currPage, totalPages, onChange }) => {
   if (totalPages <= 1) return null;
 
   return (
-    <StyledControls>
+    <StyledControls key="pagination-controls">
       <Button disabled={currPage === 0} onClick={e => pageChange(null, -1)}>
         <i className="fas fa-chevron-left"></i>
       </Button>

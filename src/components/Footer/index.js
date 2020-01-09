@@ -8,7 +8,7 @@ const StyledFooter = styled.footer`
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: -1px -1px 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: -1px -1px 1px 1px ${({ theme }) => theme.variables.backgroundColor};
   width: 100%;
   background: white;
 
@@ -26,7 +26,7 @@ function Footer() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        Arjun
+        arjun
       </a>
     </StyledFooter>
   );
