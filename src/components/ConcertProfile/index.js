@@ -103,11 +103,6 @@ function ConcertProfile(props) {
           </section>
         </section>
         <Map
-          style={{
-            width: "400px",
-            height: "400px",
-            pointerEvents: "none"
-          }}
           className="google-map"
           coordinates={props.loc && props.loc.coordinates}
           name={props.name}

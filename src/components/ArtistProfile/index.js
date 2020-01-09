@@ -61,7 +61,6 @@ const StyledPage = styled.section`
 `;
 
 function ArtistProfile(props) {
-  console.log("props *****---->>>", props);
   return (
     <StyledPage>
       <header>
@@ -99,8 +98,8 @@ function ArtistProfile(props) {
         <SpotifyPlayer
           uri={`spotify:artist:${props.spotify_id}`}
           size="large"
-          view="black"
-          theme="list"
+          view="list"
+          theme="black"
         />
       ) : null}
       {props.bio ? <p className="bio">{props.bio}</p> : <p>No info</p>}

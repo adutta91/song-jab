@@ -3,7 +3,6 @@ import { Map, Marker, GoogleApiWrapper } from "google-maps-react";
 
 function MapContainer(props) {
   if (!props.coordinates) return null;
-  console.log("props.coordinates *****---->>>", props.coordinates);
   const [lng, lat] = props.coordinates;
 
   return (

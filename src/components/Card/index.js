@@ -4,7 +4,7 @@ import styled from "styled-components";
 const StyledCard = styled.section`
   transition: all 0.1s ease-out;
   border-radius: 5px;
-  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 1px 1px ${({ theme }) => theme.variables.backgroundColor};
   padding: 20px;
   width: 400px;
   height: 300px;
@@ -17,7 +17,8 @@ const StyledCard = styled.section`
   justify-content: center;
 
   &:hover {
-    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 2px 3px 3px
+      ${({ theme }) => theme.variables.backgroundColor};
   }
 
   text-decoration: none;
